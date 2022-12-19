@@ -3,7 +3,7 @@ import axios from "axios"
 import { Formik } from 'formik'
 import './style.css'
 
-let baseUrl = ``
+let baseUrl = ``;
 if(window.location.href.split(":")[0]==="http"){
   let baseUrl = `http://localhost:3000` 
 }
@@ -14,7 +14,7 @@ export const Weather = () => {
     // console.log(weather)
     const clickHandler =(e)=>{
         e.preventDefault();
-      axios.get(`${baseUrl}/weather/${cname}`)
+      axios.get(`${baseUrl}/weather`)
       .then(response =>{
         console.log("response",response)
         Setweatherdata(response.data)
